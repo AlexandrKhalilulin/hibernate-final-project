@@ -30,7 +30,8 @@ public class Country {
     private BigDecimal surfaceArea;
 
     @Column(name = "indep_year")
-    private Short independenceYear;
+    @Convert(converter = AttributeYearConverter.class)
+    private Year independenceYear;
 
     private Integer population;
 
@@ -115,11 +116,11 @@ public class Country {
         this.surfaceArea = surfaceArea;
     }
 
-    public Short getIndependenceYear() {
+    public Year getIndependenceYear() {
         return independenceYear;
     }
 
-    public void setIndependenceYear(Short independenceYear) {
+    public void setIndependenceYear(Year independenceYear) {
         this.independenceYear = independenceYear;
     }
 
